@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addNote, selectNotes } from './noterSlice';
+import { addNote, deleteNote, selectNotes } from './noterSlice';
 
 
 export function Noter() {
@@ -12,6 +12,8 @@ export function Noter() {
         return (
         <div key={i}>
             #{i+1}. {note}
+            &nbsp;<span onClick={() => dispatch(deleteNote(i))}>X</span>
+
         </div>
         )
     })

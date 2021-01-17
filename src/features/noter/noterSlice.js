@@ -7,12 +7,15 @@ export const noterSlice = createSlice({
     reducers: {
         addNote: (state, action) => {
             state.push(action.payload)
+        },
+        deleteNote: (state, action) => {
+            state.splice(action.payload, 1)
         }
     }
 
 })
 
-export const { addNote } = noterSlice.actions;
+export const { addNote, deleteNote } = noterSlice.actions;
 
 export const selectNotes = state => state.noter;
 
